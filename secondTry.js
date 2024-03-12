@@ -9,19 +9,22 @@ const candySelection = favoriteCandy.split(`,`);
 
 //create an object that will take in those strings, which in object terms is a key
 //we will leave it empty and will not hard code since the input can change
-const candies = {};
+const candyTypes = {};
 
+//We need to go through the list using a for loop
 for(let i = 0; i < candySelection.length; i++){
+  //create a variable and set it equal to the array
   const candy = candySelection[i];
-  if(candies[candy] === undefined){
-    candies[candy] = 1;
+  //then we need to add the string to the empty object
+  //create a condition based on whether the candy selection is in the object
+  if(candyTypes[candy] === undefined){
+    candyTypes[candy] = 1;
   } else {
     candies[candy]++;
   }
 }
 
-console.log(candies);
-//We need to go through the list using a for loop
-//create a variable and set it equal to the array
-//then we need to add the string to the empty object
-//create a condition based on whether the candy selection is in the object
+console.log(`Candy Selection:`);
+for(let candy in candyTypes){
+  console.log(`${candy}: ${candyTypes[candy]}`);
+}

@@ -16,9 +16,8 @@ const flavorTypes = {};
 //key is the flavors
 //value qty of the flavors
 
-//create a for loop
+//create a for loop that will go through each individual flavor/string
 for(let i = 0; i < flavors.length; i++){
-  //go through each individual flavor, the value will increase
   const flavor = flavors[i];
   //if the flavor is not in the object, then we need to add it to the object
   if (flavorTypes[flavor] === undefined){
@@ -27,7 +26,10 @@ for(let i = 0; i < flavors.length; i++){
     //else the value will increase
     flavorTypes[flavor]++;
   } 
+  //not sure if a return statement needs to be here - will ask tomorrow.
 }
-console.table(flavorTypes);
-//get the total count of each flavor
+console.log('Froyo Order:');
 //turn it into a table
+for(let flavor in flavorTypes){
+  console.log(`${flavor}: ${flavorTypes[flavor]}`);
+}
